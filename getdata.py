@@ -1,3 +1,6 @@
+# Creates data directory and subdirectories for each category.
+# Each category contains 1000 images
+
 from quickdraw import QuickDrawDataGroup
 import PIL
 import numpy
