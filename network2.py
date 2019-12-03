@@ -1,3 +1,6 @@
+# Run getdata2.py program before running this program!
+# This program is based on this example: https://pytorch.org/tutorials/beginner/finetuning_torchvision_models_tutorial.html
+
 from __future__ import print_function
 from __future__ import division
 import torch
