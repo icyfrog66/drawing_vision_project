@@ -1,4 +1,5 @@
 # Run getdata2.py program before running this program!
+# Trains a model and saves it.
 # This program is based on this example: https://pytorch.org/tutorials/beginner/finetuning_torchvision_models_tutorial.html
 
 from __future__ import print_function
@@ -23,12 +24,12 @@ import copy
 data_dir = "./data"
 
 # Models to choose from [resnet, alexnet, vgg, squeezenet, densenet, inception]
-model_name = "squeezenet"
+model_name = "resnet"
 
 # Number of classes in the dataset
-num_classes = 2
+num_classes = 8
 
-# Batch size for training (change depending on how much memory you have)
+# Batch size for training (change depending on how much memory you have) 
 batch_size = 8
 
 # Number of epochs to train for
@@ -280,3 +281,7 @@ criterion = nn.CrossEntropyLoss()
 model_ft, hist = train_model(model_ft, dataloaders_dict, criterion, optimizer_ft, num_epochs=num_epochs, is_inception=(model_name=="inception"))
 
 
+### END OF EXAMPLE CODE
+
+# Save the trained model
+torch.save(model_ft, model_name + ".pth")
