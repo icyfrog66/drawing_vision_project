@@ -15,4 +15,4 @@ This command will train on the neural network (currently the network only does a
 
 https://docs.google.com/document/d/13X_dw9HP5LGxE2Sd8XTahElW6A-7wqLPSoxUviOpIz4/edit?usp=sharing
 
-Document comparing the performance of pretrained Pytorch models. Resnet has the best val accuracy (= 0.828750) of all the models and is also does not take too much time to train (70 minutes).
+Document comparing the performance of pretrained Pytorch models. Resnet has the best val accuracy (= 0.828750) of all the models and it also does not take too much time to train (70 minutes).
