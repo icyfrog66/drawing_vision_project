@@ -20,3 +20,7 @@ Document comparing the performance of pretrained Pytorch models (i.e. using netw
 https://drive.google.com/file/d/1UlezlRfi6RYVFhBhNi-OYo7hAYyqNDKQ/view?usp=sharing
 
 Poster for presentation.
+
+`python3 printfeatures.py`
+
+printfeatures.py should print out the last layer of a custom trained network (only around 70% test accuracy for now, but 2nd to last layer of features have been converted to an np array).
