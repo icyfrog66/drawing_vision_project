@@ -22,7 +22,7 @@ dataset_loader = torch.utils.data.DataLoader(hymenoptera_dataset,
 #cuda = torch.device('cuda') 
 test_dataset = datasets.ImageFolder(root='./data/val', transform=data_transform)
 test_loader = torch.utils.data.DataLoader(test_dataset,
-											 batch_size=64, shuffle=True,
+											 batch_size=1, shuffle=True,
 											 num_workers=0)
 
 
@@ -67,11 +67,11 @@ net.to(device)
 
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(), lr=0.002, momentum=0.9)
-
+features = []
 for epoch in range(1):  # loop over the dataset multiple times
 
 	running_loss = 0.0
-	for i, data in enumerate(dataset_loader, 0):
+	for i, data in enumerate(test_loader, 0):
 		#get the inputs; data is a list of [inputs, labels]
 		#inputs, labels = data
 		inputs, labels = data[0].to(device), data[1].to(device)
@@ -82,6 +82,7 @@ for epoch in range(1):  # loop over the dataset multiple times
 		# forward + backward + optimize
 		outputs = net(inputs)
 		outputs = outputs.cpu().detach().numpy() 
+		features.append(outputs)
 		print(outputs)
 		"""loss = criterion(outputs, labels)
 		loss.backward()
